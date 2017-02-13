@@ -1,0 +1,49 @@
+.ud-home {
+    padding: 15px;
+    .ant-row {
+        margin-bottom: 20px;
+    }
+    .data-view-box {
+        height: 116px;
+        color: #fff;
+        .data-view-icon {
+            font-size: 38px;
+            margin-right: 10px;
+        }
+        .data-view-num {
+            position: absolute;
+            font-size: 15px;
+            top: 22px;
+        }
+        .data-view-text {
+            position: absolute;
+            top: 45px;
+        }
+    }
+    .tc-resolve {
+        background-color: #6a8abe;
+    }
+    .tc-open {
+        background-color: #fc8675;
+    }
+    .call {
+        background-color: #5ab6df;
+        margin-top: 20px;
+    }
+    .im {
+        background-color: #4acacb;
+        margin-top: 20px;
+    }
+    .tc-table {
+        th {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        tr {
+            cursor: pointer;
+            &:hover {
+                background-color: #f7f7f7;
+            }
+        }
+    }
+}

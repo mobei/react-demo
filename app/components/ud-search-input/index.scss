@@ -1,0 +1,15 @@
+.ud-search-input-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    .ud-search-btn {}
+    .ud-search-input-focus {}
+    .ud-search-btn-noempty {}
+    .ud-input-group-wrap {
+        width: 1%;
+        white-space: nowrap;
+        vertical-align: middle;
+        display: table-cell;
+        margin: 0;
+        padding: 0;
+    }
+}

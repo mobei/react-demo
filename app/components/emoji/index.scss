@@ -1,0 +1,40 @@
+.emoji-panel {
+    width: 430px;
+    border: 1px solid #ddd;
+    .emojis {
+        height: 160px;
+        margin: 5px 0;
+        padding: 0 0 0 15px;
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .emoji-container {
+        padding: 1px 8px;
+        border-radius: 3px;
+        cursor: pointer;
+        padding-top: 4px;
+        &:hover {
+            background-color: #f2f3f4;
+        }
+    }
+    .emoji {
+        width: 24px;
+        height: 24px;
+    }
+    .emoji-tabs {
+        background-color: #eee;
+        div {
+            width: 20%;
+            text-align: center;
+            height: 35px;
+            line-height: 35px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .active {
+            cursor: default;
+            background-color: #fff;
+        }
+    }
+}

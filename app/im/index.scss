@@ -1,0 +1,260 @@
+@import "../common/css/common";
+$navWidth: 290px;
+$imImageUrl: $imagePath + "im/";
+$receiveColor: #75cef7;
+$sendColor: #b3ec8d;
+.ud-im {
+    @include absolute(15px, 15px, 0, 0);
+    @include box-shadow;
+    background-color: #fff;
+    .im-nav {
+        width: $navWidth;
+        @include absolute(0, 0, initial, 0);
+        border-right: 1px solid #ddd;
+        .im-header {
+            height: 90px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            .im-avatar {
+                @include bg-img('account/user.png', 50, 50);
+                border-radius: 25px;
+                margin: 10px;
+            }
+            .im-name {
+                @include absolute(92px, 23px);
+            }
+            .statue-btn {
+                width: 70px;
+                margin-left: 10px;
+                margin-top: 30px;
+            }
+            .circle {
+                width: 8px;
+                height: 8px;
+                display: inline-block;
+                border-radius: 4px;
+                float: right;
+                margin-top: 6px;
+                &.online {
+                    background: #46e41a;
+                }
+                &.busy {
+                    background: #FFD54F;
+                }
+                &.offline {
+                    background: #ddd;
+                }
+            }
+        }
+        .im-chats {
+            .im-chat {
+                height: 70px;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding: 10px;
+                &:hover {
+                    background-color: #f9f9f9;
+                    cursor: pointer;
+                    .close {
+                        display: block;
+                    }
+                }
+                .nick-line {
+                    font-size: 14px;
+                    position: relative;
+                    .platform {
+                        font-size: 16px;
+                        color: #d0cece;
+                    }
+                    .nick-name {
+                        margin-left: 10px;
+                        max-width: 200px;
+                        display: inline-block;
+                        overflow: hidden;
+                        @include ellipsis;
+                        vertical-align: top;
+                    }
+                    .unread {
+                        position: absolute;
+                        right: 30px;
+                        top: 10px;
+                    }
+                }
+                .msg-line {
+                    position: relative;
+                    margin-top: 10px;
+                    color: #9c9b9b;
+                    .msg-content {
+                        display: inline-block;
+                        max-width: 200px;
+                    }
+                    .msg-time {
+                        position: absolute;
+                        right: 15px;
+                    }
+                }
+                .close {
+                    @include absolute(initial, 25px, 5px);
+                    cursor: pointer;
+                    display: none;
+                    &:hover {
+                        color: #2db7f5;
+                    }
+                }
+            }
+            .im-chat.active {
+                background-color: #f0f2f3;
+                cursor: default;
+            }
+            .im-chat.online {
+                .platform {
+                    color: #2db7f5;
+                }
+            }
+        }
+    }
+    .im-messages {
+        @include absolute($navWidth, 0, 0, 0);
+        .im-customer-info {
+            height: 90px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            .im-customer-avatar {
+                @include bg-img('im/zoro.png', 50, 50);
+                margin: 10px;
+            }
+            .im-customer-name {
+                position: absolute;
+                top: 25px;
+                left: 110px;
+            }
+            .im-customer-status {
+                position: absolute;
+                left: 90px;
+                bottom: 21px;
+            }
+            .im-customer-platform {
+                position: absolute;
+                top: 25px;
+                left: 90px;
+                font-size: 14px;
+            }
+        }
+        .im-messages-box {
+            @include absolute(0, 90px, 0, 130px);
+            padding: 10px;
+            .im-msg-list {
+                .im-msg-item {
+                    margin-top: 15px;
+                    padding: 0 10px;
+                    .im-msg-content {
+                        position: relative;
+                        display: inline-block;
+                        font-size: 12px;
+                        background: $receiveColor;
+                        max-width: 80%;
+                        padding: 8px 10px;
+                        border-radius: 3px;
+                        word-wrap: break-word;
+                        word-break: break-all;
+                        min-height: 35px;
+                        .sharp {
+                            width: 0px;
+                            height: 0px;
+                            border: 5px transparent solid;
+                            border-color: #fff;
+                            border-right-color: $receiveColor;
+                            @include absolute(-10px, 12px);
+                        }
+                        .emoji {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                }
+                .send {
+                    .im-msg-content {
+                        float: right;
+                        background: $sendColor;
+                        .sharp {
+                            border-color: #fff;
+                            border-left-color: $sendColor;
+                            position: absolute;
+                            @include absolute(inherit, 12px, -10px);
+                        }
+                    }
+                }
+            }
+        }
+        .online {
+            .im-customer-platform {
+                color: #2db7f5;
+            }
+            .im-customer-status {
+                color: #79da65;
+            }
+        }
+        .offline {
+            .im-customer-platform {
+                color: #d0cece;
+            }
+            .im-customer-status {
+                color: #d0cece;
+            }
+        }
+        .im-msg-bar {
+            @include absolute(0, initial, 0, 0);
+            border-top: 1px solid #ddd;
+            height: 130px;
+            .tool-bar {
+                padding: 10px;
+                font-size: 16px;
+                .uploader-box {
+                    display: inline-flex;
+                    div {
+                        font-size: 16px;
+                    }
+                }
+                i {
+                    height: 20px;
+                    margin-right: 20px;
+                    cursor: pointer;
+                    &:hover {
+                        color: #2db7f5;
+                    }
+                }
+                .up-picker {
+                    position: relative;
+                    .webuploader-pick {
+                        width: 20px;
+                        height: 20px;
+                        padding: 0 0 2px;
+                        background: none;
+                        font-size: 12px;
+                        border-radius: 0;
+                        // margin-top: -20px;
+                    }
+                }
+            }
+            .im-emoji-panel {
+                width: 430px;
+                border: 1px solid #ddd;
+                position: absolute;
+                top: -215px;
+                left: 5px;
+                background-color: #fff;
+            }
+            textarea {
+                width: 100%;
+                position: relative;
+                border: none;
+                font-size: 14px;
+                height: 80px;
+                padding: 0 10px;
+                outline: none;
+                resize: none;
+            }
+        }
+    }
+}

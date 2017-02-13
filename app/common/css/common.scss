@@ -1,0 +1,94 @@
+$imagePath: '../common/images/';
+@mixin full($width:100%, $height:100%) {
+    width: $width;
+    height: $height;
+}
+
+@mixin absolute($l:initial, $t:initial, $r:initial, $b:initial) {
+    position: absolute;
+    left: $l;
+    top: $t;
+    right: $r;
+    bottom: $b;
+}
+
+@mixin clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin ellipsis() {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin borde-base($params: 1px solid #ddd) {
+    border: $params;
+}
+
+@mixin border-radius($params: 5px) {
+    -webkit-border-radius: $params;
+    -moz-border-radius: $params;
+    -ms-border-radius: $params;
+    -o-border-radius: $params;
+    border-radius: $params;
+}
+
+@mixin box-shadow($params: 1px 1px 1px #ddd) {
+    -moz-box-shadow: $params;
+    -webkit-box-shadow: $params;
+    box-shadow: $params;
+}
+
+@mixin bg-img-size($w, $h) {
+    width: unquote($w+'px');
+    height: unquote($h+'px');
+    background-size: unquote($w+'px') unquote($h+'px');
+}
+
+@mixin bg-img($url, $w, $h) {
+    display: inline-block;
+    background: url($imagePath + $url) no-repeat 0 0 transparent;
+    vertical-align: middle;
+    @include bg-img-size($w, $h);
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.ellipsis {
+    @include ellipsis;
+}
+
+.scrollbar {
+    overflow: auto;
+    &::-webkit-scrollbar-thumb {
+        // border-radius: 3px;
+        background-color: #75cef7;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #424f63;
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+}

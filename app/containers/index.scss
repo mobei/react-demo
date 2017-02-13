@@ -1,0 +1,67 @@
+@import "../common/css/reset";
+@import "../common/css/common";
+$menuWidth: 52px;
+$barHeight: 50px;
+$baseColor: #2db7f5;
+$baseBgColor: #f7f7f7;
+#app {
+    @include full;
+}
+
+.ud-application {
+    @include full;
+}
+
+.ud-content {
+    overflow: auto;
+    background-color: $baseBgColor;
+    @include absolute($menuWidth, $barHeight, 0, 0);
+}
+
+.ud-menus {
+    @include full($menuWidth);
+    background-color: #424f63;
+    .logo-box {
+        display: block;
+        padding: 5px;
+        height: 50px;
+        cursor: pointer;
+    }
+    .menu-box {
+        display: block;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 40px;
+        cursor: pointer;
+        i {
+            font-size: 20px;
+            color: #fff;
+        }
+        &:hover {
+            background-color: #353f4f;
+        }
+    }
+    .menu-box.active {
+        cursor: default;
+        background-color: #353f4f;
+        i {
+            color: $baseColor;
+        }
+    }
+}
+
+.ud-bars {
+    @include absolute($menuWidth, 0px, 0px);
+    height: $barHeight;
+    border-bottom: 1px solid #eee;
+    .ud-search-input-wrapper {
+        width: 200px;
+        margin: 10px;
+    }
+    .tc-auto-assign {
+        position: absolute;
+        right: 140px;
+        top: 14px;
+    }
+}

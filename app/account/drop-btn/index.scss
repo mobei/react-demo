@@ -1,0 +1,27 @@
+.account-drop-menu {
+    display: inline-block;
+    height: 50px;
+    float: right;
+    line-height: 50px;
+    width: 130px;
+    text-align: center;
+    a {
+        color: #5c5c5d;
+    }
+    .user-name {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+    .user-icon-box {
+        display: inline-block;
+        width: 30px;
+        height: 50px;
+        margin-right: 10px;
+        img {
+            width: 26px;
+            height: 26px;
+            border-radius: 13px;
+            margin-bottom: -6px;
+        }
+    }
+}
